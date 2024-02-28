@@ -7,8 +7,26 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views') );
 
+var contactList = [
+    {
+        name : "Arpan",
+        phone : "1234567890"
+    },
+    {
+        name : "Arpan2",
+        phone : "1234567890"
+    },
+    {
+        name : "Arpan3",
+        phone : "1234567890"
+    },
+]
+
 app.get('/', function(req, res){
-     return res.render('home', {title: "I am Flying hehe"});
+     return res.render('home',{
+        title: "My contact list",
+        contact_list : contactList
+    });
 });
 
 
