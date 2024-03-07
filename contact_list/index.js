@@ -34,6 +34,10 @@ app.get('/practice', function(req, res){
     return res.render('practice', {title: "Playgrround"});
 });
 
+app.post('/create-contact', function(req, res){
+    return res.redirect('/practice');
+});
+
 
 app.listen(port, function(err){
     if(err) { console.log('Error in running server', err);}
