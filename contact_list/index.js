@@ -8,6 +8,21 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views') );
 app.use(express.urlencoded());
 
+//middleware 1
+
+app.use(function(req, res, next){
+    req.myName = "Arpan";
+    next();
+});
+
+// middleware 2
+
+app.use(function(req, res, next){
+    console.log('name', req.myName);
+    next();
+});
+
+
 
 var contactList = [
     {
@@ -25,6 +40,7 @@ var contactList = [
 ]
 
 app.get('/', function(req, res){
+    console.log('name2', req.myName)
      return res.render('home',{
         title: "My contact list",
         contact_list : contactList
