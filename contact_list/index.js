@@ -7,20 +7,21 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views') );
 app.use(express.urlencoded());
+app.use(express.static('assets'));
 
-//middleware 1
+// //middleware 1
 
-app.use(function(req, res, next){
-    req.myName = "Arpan";
-    next();
-});
+// app.use(function(req, res, next){
+//     req.myName = "Arpan";
+//     next();
+// });
 
-// middleware 2
+// // middleware 2
 
-app.use(function(req, res, next){
-    console.log('name', req.myName);
-    next();
-});
+// app.use(function(req, res, next){
+//     console.log('name', req.myName);
+//     next();
+// });
 
 
 
